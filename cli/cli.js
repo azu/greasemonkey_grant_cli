@@ -9,7 +9,7 @@ if (files.length === 0) {
 }
 
 files.forEach(function (filePath) {
-    var code = fs.readFileSync(path.resolve(process.cwd, filePath), "utf-8");
+    var code = fs.readFileSync(path.resolve(process.cwd(), filePath), "utf-8");
     var usedAPIList = require("../lib/listing-api")(code);
     var output = require("../lib/generate-grant")(usedAPIList);
     if (output != null) {
